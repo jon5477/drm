@@ -4,7 +4,7 @@
   <groupId>sp.drm</groupId>
   <artifactId>dateservice</artifactId>
   <packaging>jar</packaging>
-  <version>1.0-SNAPSHOT</version>
+  <version>1.0.0</version>
   <name>dateservice</name>
   <url>http://maven.apache.org</url>
   <properties>
@@ -12,6 +12,15 @@
     <bundle.namespace>${project.groupId}.${project.artifactId}</bundle.namespace>
   </properties>
   <build>
+    <defaultGoal>clean compile bundle:bundle</defaultGoal>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <includes>
+          <include>dependencies.json</include>
+        </includes>
+      </resource>
+    </resources>
     <plugins>
       <plugin>
         <groupId>org.apache.felix</groupId>
